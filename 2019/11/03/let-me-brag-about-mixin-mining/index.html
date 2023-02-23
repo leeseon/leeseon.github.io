@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nubyist.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="缘起11月初的魔都让我难忘，毕竟在一个北京不存在的秋季里，能见到C++之父Bjarne，更还有一众多年不见的高中同学。“高中同学”真是一个独特的物种，哪怕久久不见，见面之后依然能很快地切回当年青涩，让人理想飞扬，全然忘却中年油腻。几杯黄酒下肚，我就开始一本正经地吹上了牛皮：“我有一个只要两千万、五到七年能值四个亿的项目，你说你信不信？” 魔都不愧是宇宙金融中心，此间有高人啊。居然没有嗤笑我有互联网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我吹牛其实蛮靠谱的，说不定它真的实现了呢">
+<meta property="og:url" content="http://nubyist.io/2019/11/03/let-me-brag-about-mixin-mining/index.html">
+<meta property="og:site_name" content="牛币主义者">
+<meta property="og:description" content="缘起11月初的魔都让我难忘，毕竟在一个北京不存在的秋季里，能见到C++之父Bjarne，更还有一众多年不见的高中同学。“高中同学”真是一个独特的物种，哪怕久久不见，见面之后依然能很快地切回当年青涩，让人理想飞扬，全然忘却中年油腻。几杯黄酒下肚，我就开始一本正经地吹上了牛皮：“我有一个只要两千万、五到七年能值四个亿的项目，你说你信不信？” 魔都不愧是宇宙金融中心，此间有高人啊。居然没有嗤笑我有互联网">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-03T01:16:01.000Z">
+<meta property="article:modified_time" content="2023-02-23T15:43:57.244Z">
+<meta property="article:author" content="Sean Lee">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://nubyist.io/2019/11/03/let-me-brag-about-mixin-mining/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://nubyist.io/2019/11/03/let-me-brag-about-mixin-mining/","path":"2019/11/03/let-me-brag-about-mixin-mining/","title":"我吹牛其实蛮靠谱的，说不定它真的实现了呢"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我吹牛其实蛮靠谱的，说不定它真的实现了呢 | 牛币主义者</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">牛币主义者</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">牛逼者必留牛币</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%98%E8%B5%B7"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text">论证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%8A%A5"><span class="nav-number">2.1.</span> <span class="nav-text">回报</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E5%89%8D%E6%8F%90"><span class="nav-number">3.</span> <span class="nav-text">大前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%9E%E5%93%81"><span class="nav-number">4.</span> <span class="nav-text">竞品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E9%99%A9"><span class="nav-number">5.</span> <span class="nav-text">风险</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">6.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96"><span class="nav-number">7.</span> <span class="nav-text">题外</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sean Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nubyist.io/2019/11/03/let-me-brag-about-mixin-mining/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sean Lee">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="我吹牛其实蛮靠谱的，说不定它真的实现了呢 | 牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          我吹牛其实蛮靠谱的，说不定它真的实现了呢
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-03 09:16:01" itemprop="dateCreated datePublished" datetime="2019-11-03T09:16:01+08:00">2019-11-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-23 23:43:57" itemprop="dateModified" datetime="2023-02-23T23:43:57+08:00">2023-02-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>11月初的魔都让我难忘，毕竟在一个北京不存在的秋季里，能见到C++之父Bjarne，更还有一众多年不见的高中同学。“高中同学”真是一个独特的物种，哪怕久久不见，见面之后依然能很快地切回当年青涩，让人理想飞扬，全然忘却<strong>中年油腻</strong>。几杯黄酒下肚，我就开始一本正经地吹上了牛皮：“我有一个只要两千万、五到七年能值四个亿的项目，你说你信不信？” 魔都不愧是宇宙金融中心，此间有高人啊。居然没有嗤笑我有互联网人说大话的毛病，也没有怀疑我是专门来CX拉人头的。淡定地分析到：“xx年xx的房价4、5千，最近到了十万左右，也是20倍的收益，不过时间上不止7年，你的项目也不像听上去那样不靠谱，说来听听” </p>
+<p><strong>轰</strong> 我脑中顿时有如漫天的烟火炸开，酒醒了一半：就好象我使出平生绝学降龙十巴掌，本以为能一招制敌，却被一招荡剑式轻描淡写地化了开去，如中败革，有力使不出来。恍惚间意识到，噢，这不是我的主场，原来我是没有主角光环滴。</p>
+<p>不过作为老江湖自然也是不惧的，我一阵化繁就简大法，也算稳住场面没有露出怯来，有惊无险XD</p>
+<h2 id="论证"><a href="#论证" class="headerlink" title="论证"></a>论证</h2><p>哼，好歹我也是一介理工男，清醒之后自是少不了要找回场子的，从逻辑上论证一番，酒后我也是严谨的。</p>
+<p>其实说来也很简单，如果有一个基于区块链的去中心化支付宝（PayPal）公司的早期入股机会，是不是七年二十倍收益并不算夸张？</p>
+<p>如果读过我上篇文章《Mixin Messenger 伪装成聊天工具的区块链定投神器（下）》应该就会明白了：去中心化支付宝其实是指 Mixin Network，引用其中两段来说明为什么它被我称为“币圈支付宝”，想要了解更多可以翻看我的前两篇文章。</p>
+<blockquote>
+<p>你可以将 BTC、EOS、ETH 之类的各种链想象成一个个独立的“银行”，它们发行各种数字资产（为了免于歧义，还是不要称之为货币），因为这些所谓的“银行”自身的运行逻辑或安全机制的限制，用户在各种银行间转帐的时间与费用是不同的：例如 BTC “行”的转帐时间是一个小时，几十块钱， EOS与ETH “行”转帐需要几分钟，EOS免费而ETH大要几毛钱的手续费。不过一旦当你将你在 BTC、EOS 等“行”的钱转到了 Mixin Network 上，那所有 Mixin Network 的用户间的转帐就直接变成实时的，而且还是免费的了。你说这不是一个币圈支付宝是什么啊。<br>当然，你此时一定会冒出“那，Mixin 不就是一个中心化的节点（平台）了吗？”这样的问题。嗯，你是对的，的确是这样的，只不过 Mixin Network 是一个按<strong>去中心化</strong>方式运营的中心型节点。</p>
+</blockquote>
+<p>不过关于 Mixin Network（在不影响理解的情况下，以下简称为 Mixin) 的去中心化运营，我需要在这里展开说一下：Mixin其实与中心化的区块链交易所比较像，它们都为用户管理多种数字资产，我们的数字资产其实是需要先交给它们保管的，然后由它们为我们记帐，只是交易所为我们提供是的交易功能，Mixin为我们提供的是支付功能。</p>
+<p>由于数字资产是交（委托）给它们保管，因此理论上是存在跑路的风险的，只不过交易所的风险只能依赖于法律，而Mixin是依靠引入了POS机制来尽量规避的。使用一个不太精确的类比，Mixin的数字资产是由一个董事会来管理的，董事会席位由持有的股份（XIN）的多少来决定，每持有一万个XIN能占一个席位，如果要动用公司资产，必须有三分之二以上的董事同意批准，哪怕是要约定偷出公司的钱分给自己用也需要三分之二的董事同意。对应于Bitcoin的51%攻击，Mixin需要67%才能发起攻击。</p>
+<p>这样一来有趣的事就发生了，因为每个董事席位都是由持有大量的XIN而得来了，如果发起攻击的结果必然是虽然获得了Mixin中存着的BTC之类的数字资产，但损失的是当年购买XIN而花掉的钱（因为此时的XIN一文不名），这样一进一出，除非是获利特别大，否则没有任何人有操作董事会从Mixin中偷钱的动机。</p>
+<p>此外为了公司的顺利发展，董事会甚至会让出一些席位给独立董事，而避免给人造成一家独大把控董事会的嫌疑；就好象当年中国的某家Bitcoin矿池的算力接近51%时，会主动缩减算力，而保证大家能相信这个生态能共赢地发展下去。</p>
+<p>诚然，占据一个董事会席位是需要花费精力的，如果没有收益的情况下是没有人会愿意做的。同理作为一个Mixin的记账节点也是需要花费计算力资源来维护的，因此Mixin为记账节点提供了激励机制，所有的激励都换算成XIN来支付，而这种通过抵押XIN并参与记账来获收XIN的方法也就是俗称的<strong>POS挖矿</strong>。</p>
+<h3 id="回报"><a href="#回报" class="headerlink" title="回报"></a>回报</h3><p>Mixin的挖矿节点奖励第一年总共是45000个XIN，以后每年会递减为上一年的90%；这些奖励会由挖矿结点平分掉，如果按照现在的节点数31个，加上我需要搭的一个节点，按32个节点算，每个节点的收益将1406.25个XIN，年化率14%，七年毛估估的一算，能有7336个XIN的收入。从币本位上算年化8%多一点。</p>
+<p>当然上面算的是币本位，如果再按法币本位，现在一个XIN是1777RMB，历史最高2018年1月12日到过16689RMB，如果回到历史高位就1.7336*1.7约2.9亿元了。</p>
+<p>而且如果按对标物算，XIN的全流通市值是254.22刀*100万个约2.5亿美金，拿它和支付宝对标有点太吹牛了，所以拿它和只作BTC支付的Circle公司的80亿美金估值对标，也有32倍的增长，所以保守算七年有15倍增长那七年后1万个XIN通过挖矿而来的1.7万个XIN总价值也是4.6亿RMB的。</p>
+<p>现在一万个XIN再加上七年的节点成本一共大概两千万，七年大概四个亿，哈哈，是不是这样的推导还算靠谱</p>
+<h2 id="大前提"><a href="#大前提" class="headerlink" title="大前提"></a>大前提</h2><p>当然聪明如你，你肯定不会被一个“币圈支付宝”的名头忽悠住，你不禁会问：</p>
+<p>虽然“区块链”这个词现在炙手可热，但仅靠这一点想要说明这个项目大概率可能成功还是依然不够的，其实还必须说明如下几个问题：</p>
+<ul>
+<li>数字资产（尤其是比特币）必须有用，而且得有很多人用</li>
+<li>数字资产的支付功能是一个刚需，如果只是作为价值储值工具，支付则并无必要</li>
+<li>与其它竞品的比较及优势何在</li>
+</ul>
+<p>不错不错，能问出这么高质量的问题，说明这是独立且严肃地思考的。</p>
+<p>对于比特币，对，就是比特币（不是泛指区块链，或者其它数字资产），我的观点是它已经在各家政府反应过来之前惊险地跃过了死亡点，以后不再可能“死”了，而且慢慢会被主流世界接受。最近的一个佐证就是Bakkt 正式在洲际交易所（ICE）启动以实物结算的比特币（BTC）期货交易。由一个主流传统的交易所集团下支持的实物交割的金融品种，怎么都不能再算成空气了吧。</p>
+<p>而且由比特币所发明的区块链技术，在我看来是一种不可逆技术，就是一旦被人发明出来，就不可能被忽视的技术，互联网、移动电话、智能手机都是不可逆技术。其实看上去没有那么起眼的，网约车也算是一种不可逆技术，因为大家都不愿再回到没有网约车的时代。而且哪怕是饱受争议的基因编辑与克隆人技术都是一种不可逆技术。</p>
+<p>区块链技术第一次让大家看到了一种不需要借助中间人就能建立信任的方式，所以仅从区块链上讲，它都不可以再回退回去，正如潘多拉魔盒一样。</p>
+<p>而且比特币（区别于区块链）作为一种效率极高的跨国际价值转化工具，Don Tapscott将之称为“Internet of Values”，它一旦产生，哪怕被人诟病，但它必然成功，因为BTC天然通缩再加上能加快价值的流动。其实仅仅加快价值的流动就足够了啊。</p>
+<p>人类有时真的很奇怪，他们能很好的预测长期，但很难预测短期：比如普通人不需要是科幻作家都能预见移民火星，但就算是最牛科幻大师海因莱因在50年代写的科幻书中，描写二十一世纪的世界，没有预计到互联网、手机的出现，虽想象有植入人体的电话，但总统广播信息还需要立体电视，拍视频还需要摄像机。其实这并不奇怪，因为大家都能感知浪潮，但很难猜中浪花。</p>
+<p>所以，虽然从伦理上大家很难接受克隆人，但大家都没法否认以后克隆人一定会成为现实，因为这是一种高效建立生命的形式，这算是一种历史的必然。所以能加快价值流动的比特币，必然会因为顺应趋势而成功。这不是信仰，而是逻辑推论。</p>
+<p>同样道理，能更快的转移价值的功能也是一种逻辑的必然，虽然比特币本身作不到，但是只要牺牲一点去中心化，就能很好的做到，而且这一部分的技术也已经发明出来了，无论是基于比特币的闪电网络，还是Mixin，或者其它今年很热的跨链技术都是对这个趋势的呼应。也就是说无论Mixin成不成，都会有一个解决大家数字资产支付的技术方案会最终成功，并为大家广为使用。</p>
+<h2 id="竞品"><a href="#竞品" class="headerlink" title="竞品"></a>竞品</h2><p>毕竟世界上是有很多聪明人的，有一个明显的需求摆在那儿，总会有聪明人看到，并且跳出来解决，因此很久之前就有了二层网络、侧链及跨链技术。其实大家的思路基本上相同的，既然POW的主网在安全与效率不能兼顾的情况下，那不妨为了效率牺牲一部分不是太必须的安全性：</p>
+<ul>
+<li>先将一部分数字资产从主网上拿出来给一个中心化的节点，这个中心化的节点的用户之间的转账只在内部记录即可，不用每笔都回到主链上，只在需要提现回主网时，再进行清算工作。</li>
+<li>中心化的节点都使用POS的方式进行运营，保证记账方为了自己的利益不会轻易作恶而瞎记账。</li>
+</ul>
+<p>既然大家思路都一样想到一块去了，那么Mixin的独特优势又是什么呢？我认为大概有几点：</p>
+<ul>
+<li>Mixin团队的思路很对，他们是先做了一个超级好用的钱包（Mixin Messenger），这样直接在C端就发力了，而且B端的布局也很好，矿场使用了Mixin能保证矿工的即挖即提现之类。具体可以看我之前的文章与Mixin的官方说明。</li>
+<li>同时因为这个钱包太好用，由此聚集效应与头部效应能很快的将Mixin的生态打开，进入到一个正向反馈的循环中，用的人越多生态越好，生态越好就会用得人越多</li>
+<li>再强调一遍也不算过吧，钱包是一个超级刚需、高频的区块链产品入口，而且钱包中还带多个交易工具，简直不能太好了</li>
+<li>队友太挫了：BTC与ETH的闪电网络太难用，技术门槛太高，而且需要双方一直在线，此外还只能针对一类主网</li>
+<li>Cosmos虽然主网已经上线，但是线上还没有被托管数字资产，几乎不可用</li>
+<li>Polkadot（波卡）主网还没有上线</li>
+<li>队友们的技术路线使用的是原生的BlockChain技术，而Mixin使用的是UTXO+DAG；在一个平台型的软件中使用BlockChain想做到高TPS及低延时是很有难度的，连技术最好的BM也暂时只到了3、4千，以后可能会更高；但是DAG技术本身基本上没有这方面的上限，所以Mixin当时跳出BlockChain的窠臼，而没有背一个一定要使用BlockChain的思想包袱，还真算是一种降维打击。</li>
+</ul>
+<p>当然Mixin暂时还有一些短板，比如国际上的宣传不够，而且开发文档真的不太友好之类，好在是瑕不掩瑜，只要主方向对了，现在看来还算只是小节。</p>
+<h2 id="风险"><a href="#风险" class="headerlink" title="风险"></a>风险</h2><p>还是需要再郑重警示一下：<strong>区块链投资现在依然存在高风险，请使用闲钱投资。此外你最好是一个合格的投资人。</strong></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>这是一个理工男一本正经说的瞎话，我只是来立flag的。并且我说的都可能是错的，一定要警惕黑天鹅！</p>
+<h2 id="题外"><a href="#题外" class="headerlink" title="题外"></a>题外</h2><p>有时还挺应景的，我刚想找人说区块链投资，ZF就帮我定了调。这篇文章我还没有写完，Mixin的官宣就出来了，而且还开了一个有趣的拉新活动：全民签到领 BTC 活动<br>搜索机器人 7000101487 （Lucky BTC Bot），打开机器人就能看到。初始签到奖励 100 葱，连续签到每天比前一天多 100 葱，连续签到 365 天可得 0.066795 个比特币。只要你是手工签到，就不会不给币，而且每个手机号就可以注册一个Mixin号。不过为了更好的使用Mixin Messenger你最好看一下我之前的文章。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/03/another-awesome-mixin-messenger/" rel="prev" title="Mixin Messenger 伪装成聊天工具的区块链定投神器（下）">
+                  <i class="fa fa-chevron-left"></i> Mixin Messenger 伪装成聊天工具的区块链定投神器（下）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/11/14/xin-pos-mining-is-greate/" rel="next" title="为什么说Mixin节点是一门长期靠谱的项目">
+                  为什么说Mixin节点是一门长期靠谱的项目 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Lee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

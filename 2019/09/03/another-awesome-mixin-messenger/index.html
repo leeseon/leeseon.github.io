@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nubyist.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="闲扯昨天又翻了一下李笑来在2018年11月份写的《这此年我看到的所谓区块链》，这也算是针对 Mixin Network 的正式“软文”了。当时 XIN 正好是价格的低点啊！我居然没有真的去找一下 Mixin Network 的白皮书去看看，看来思想不 Opening，而且认知速度慢还是很耽误赚钱的。 不过世界本来也不存在所谓的“错过”，自以为是错过了，那肯定是一厢情愿而已，因为机会一直在那里，你没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mixin Messenger 伪装成聊天工具的区块链定投神器（下）">
+<meta property="og:url" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/index.html">
+<meta property="og:site_name" content="牛币主义者">
+<meta property="og:description" content="闲扯昨天又翻了一下李笑来在2018年11月份写的《这此年我看到的所谓区块链》，这也算是针对 Mixin Network 的正式“软文”了。当时 XIN 正好是价格的低点啊！我居然没有真的去找一下 Mixin Network 的白皮书去看看，看来思想不 Opening，而且认知速度慢还是很耽误赚钱的。 不过世界本来也不存在所谓的“错过”，自以为是错过了，那肯定是一厢情愿而已，因为机会一直在那里，你没">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/exinone.png">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/exinone_main.jpeg">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/exinone_tool.jpeg">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/dt.png">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/dt_replay.png">
+<meta property="og:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/dt_replay_list.png">
+<meta property="article:published_time" content="2019-09-03T07:46:17.000Z">
+<meta property="article:modified_time" content="2023-02-23T15:43:57.220Z">
+<meta property="article:author" content="Sean Lee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/exinone.png">
+
+
+<link rel="canonical" href="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/","path":"2019/09/03/another-awesome-mixin-messenger/","title":"Mixin Messenger 伪装成聊天工具的区块链定投神器（下）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mixin Messenger 伪装成聊天工具的区块链定投神器（下） | 牛币主义者</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">牛币主义者</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">牛逼者必留牛币</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B2%E6%89%AF"><span class="nav-number">1.</span> <span class="nav-text">闲扯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E4%BB%98%E5%AE%9D-%E5%BE%AE%E4%BF%A1"><span class="nav-number">2.</span> <span class="nav-text">支付宝+微信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%98%93%E6%89%80-%E4%BD%99%E9%A2%9D%E5%AE%9D-%E5%AE%9A%E6%8A%95"><span class="nav-number">3.</span> <span class="nav-text">交易所+余额宝+定投</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">社交工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">5.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sean Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nubyist.io/2019/09/03/another-awesome-mixin-messenger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sean Lee">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mixin Messenger 伪装成聊天工具的区块链定投神器（下） | 牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mixin Messenger 伪装成聊天工具的区块链定投神器（下）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-03 15:46:17" itemprop="dateCreated datePublished" datetime="2019-09-03T15:46:17+08:00">2019-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-23 23:43:57" itemprop="dateModified" datetime="2023-02-23T23:43:57+08:00">2023-02-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="闲扯"><a href="#闲扯" class="headerlink" title="闲扯"></a>闲扯</h2><p>昨天又翻了一下李笑来在2018年11月份写的《这此年我看到的所谓区块链》，这也算是针对 Mixin Network 的正式“<strong>软文</strong>”了。当时 XIN 正好是价格的低点啊！我居然没有真的去找一下 Mixin Network 的白皮书去看看，看来思想不 Opening，而且认知速度慢还是很耽误赚钱的。</p>
+<p>不过世界本来也不存在所谓的“<strong>错过</strong>”，自以为是错过了，那肯定是一厢情愿而已，因为机会一直在那里，你没有捉住，只能说当时你配不上它。就如现在3美金的EOS就在那里，或者说1万美金的BTC也就在那里，等过了几年，当它们价格飞上天时，你好意思说你错过了吗？没有，你只是当时（就是现在）你不认为它们会飞上天而已，事实证明你配不上它。所以你本不会错过一些什么。</p>
+<p>好在我还算运气不错，现在发现了 XIN 的价值也不晚啊，在区块链的世界，机会多的是，真正的大机会也并不少，随时都来得及。</p>
+<h2 id="支付宝-微信"><a href="#支付宝-微信" class="headerlink" title="支付宝+微信"></a>支付宝+微信</h2><p>现在仔细想想，感觉 Mixin Network 还真的做成了<strong>币圈支付宝</strong>啊。让我们试着回忆一下支付宝早期的事吧，当时银行还没有什么电子银行，更没有什么手机银行，银行间转帐基本上要去柜台，而且还很慢（一两天吧）。后来有了支付宝，虽然一开始将钱转到支付宝平台内还比较麻烦，但一旦钱进入到支付宝中，那在支付宝的各个帐号中转来转去就相当的简单与快速，而且转帐费也是免费的。那进一步想想，虽然支付宝平时多半是用于单币种，但是一个全球性的多币种的支付宝，也是理论上有可能的，对吧！那顺着这个思路，就会发现 Mixin Network 是就一个真正的全球性、多币种的数字资产的“支付宝”平台啊。</p>
+<p>你可以将 BTC、EOS、ETH 之类的各种链想象成一个个独立的“银行”，它们发行各种数字资产（为了免于歧义，还是不要称之为货币），因为这些所谓的“银行”自身的运行逻辑或安全机制的限制，用户在各种银行间转帐的时间与费用是不同的：例如 BTC “行”的转帐时间是一个小时，几十块钱， EOS与ETH “行”转帐需要几分钟，EOS免费而ETH大要几毛钱的手续费。不过一旦当你将你在 BTC、EOS 等“行”的钱转到了 Mixin Network 上，那所有 Mixin Network 的用户间的转帐就直接变成实时的，而且还是免费的了。你说这不是一个币圈支付宝是什么啊。</p>
+<p>不过，这个币圈支付宝也不能解决，当需要将 Mixin Network 上的资产提回各种“银行”所需要的时间与费用的。例如，将BTC 提出，依然是需要一个小时的时间与几十块的费用的。仔细想想支付宝的大额提现与提现手续费你就懂了吧。</p>
+<p>当然，你此时一定会冒出“那，Mixin 不就是一个中心化的节点（平台）了吗？”这样的问题。嗯，你是对的，的确是这样的，只不过 Mixin Network 是一个按<strong>去中心化</strong>方式运营的中心型节点。至于它本身是怎样去中心化运营的，这个我以后会慢慢讲，有兴趣大家也可以先去读读 Mixin 的白皮书。</p>
+<p>此外，很多人有点分不太清楚 Mixin Messenger 与 Mixin Network 的关系。其实 Mixin Network 是一个后端的保存资产与帐户关系的平台，而 Mixin Messenger 则是使用 Mixin Network 接口的官方客户端App。这就如同手机上的支付宝应用 APP 与阿里无数台服务器构成的支付宝平台之间的关系一样。不过比较另类的是 Mixin Messenger 没有作成手机支付宝的样子，而是做成一个聊天工具。哈，这是要支付宝 +  微信合体吗？</p>
+<p>Mixin Network 的创始人冯晓东有一次聊到，他并不喜欢别人将 Mixin Messenger 说成是币圈微信，感觉这样不能显示 Mixin 的牛叉。拜托，要不要这么傲骄，你怎么不上天？那我将 Mixin 还原为币圈支付宝+微信总行了吧。</p>
+<h2 id="交易所-余额宝-定投"><a href="#交易所-余额宝-定投" class="headerlink" title="交易所+余额宝+定投"></a>交易所+余额宝+定投</h2><p>就算稍有一点商业上的嗅觉，也会发现有趣的问题就来了：一旦有了币圈的支付宝，那基于这个支付平台能做什么来赚钱呢？如果你只想到了做电商，哈，看来商业嗅觉不及格啊。离钱这么近，当然是做金融啊！嗯，没错，果然聪明的人都想到一块了：</p>
+<p>Mixin 上最好用的交易所、余额宝及定投神器三合一的服务 ExinOne 就已经在那儿等你了，你必须拥有。在 Mixin 中所有的服务都被称作机器人，所以你现在只需要在 Mixin Messenger 中搜索  <strong>ExinOne（ID：7000101276）</strong> 将其添加为联系人即可。</p>
+<p><img src="/2019/09/03/another-awesome-mixin-messenger/exinone.png"></p>
+<p>以后只要点下 Exin 那个小机器人图标，你就会看到：<br><img src="/2019/09/03/another-awesome-mixin-messenger/exinone_main.jpeg"></p>
+<p>C2C(法币交易)、币币交易、定投设置就都在这里了，功能都很易用，随便摸索一下就能在两分钟之内花 50RMB 买到你人生的第一笔 BTC 了。</p>
+<p>此外 Exin 还提供了币余宝的功能，平时不用的币放在这里居然能币生币。<br><img src="/2019/09/03/another-awesome-mixin-messenger/exinone_tool.jpeg"></p>
+<p>Exin 的功能都很简单，应该可以直接上手，如果对一些具体的细节不了解，可能通过金马的文章<a target="_blank" rel="noopener" href="https://bihu.com/article/1539026717">https://bihu.com/article/1539026717</a>了解一下。</p>
+<p><strong>第一次点开（Exin）</strong> 时它会让你输入手机号与短信并提示你授权，中间它会询问你邀请码，重的事说三遍：</p>
+<ol>
+<li><strong>我的邀请码是（W19U4E）</strong>  </li>
+<li><strong>我的邀请码是（W19U4E）</strong>  </li>
+<li><strong>我的邀请码是（W19U4E）</strong></li>
+</ol>
+<p>如果你是因为我而注册的 Exin 的，填我的邀请码我有3刀的收入，哈哈，切记。</p>
+<h2 id="社交工具"><a href="#社交工具" class="headerlink" title="社交工具"></a>社交工具</h2><p>因为 Mixin Messenger 本身就是一个聊天工具，那当然少不了社交功能。其中 <strong>定投公开课群（ID：7000102093）</strong> 就是一个难得免费投资课堂，不定期的有很多红包：<br><img src="/2019/09/03/another-awesome-mixin-messenger/dt.png"></p>
+<p>点开机器人也能听到往期的回放<br><img src="/2019/09/03/another-awesome-mixin-messenger/dt_replay.png"><br><img src="/2019/09/03/another-awesome-mixin-messenger/dt_replay_list.png"></p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>原来 <strong>做活要做全套</strong>，还真的很难啊，这篇文章我居然写了几天，主要是截图让我有点烦，看来我不是一个太愿意描述细节的人，有很多人做的比我好XD，所以请重点关注我讲的商业逻辑，咱拼一下大局观。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/30/awesome-mixin-messenger/" rel="prev" title="Mixin Messenger 伪装成聊天工具的区块链定投神器">
+                  <i class="fa fa-chevron-left"></i> Mixin Messenger 伪装成聊天工具的区块链定投神器
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/11/03/let-me-brag-about-mixin-mining/" rel="next" title="我吹牛其实蛮靠谱的，说不定它真的实现了呢">
+                  我吹牛其实蛮靠谱的，说不定它真的实现了呢 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Lee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

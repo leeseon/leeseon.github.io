@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nubyist.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="缘起昨天问起同事，我前天写的文章牛不牛？本来以为会收到溢美之词，结果他直接来了一句TLDR（太长没有看完）。错愕之余，摒掉“明珠暗投”之感后，我认真反省自己：对啊，好好的一件事，为什么要用这么繁复的表达？细思极恐：看来还是吃了财商教育不足的亏，从小学到的都是“肉食者鄙”、“小人喻于利”之类的观点，结果自己发现了一个感觉还不错的靠谱项目，想拉人入伙、找人投资却抹不开脸面直接谈钱，居然玩煽情。这年头，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么说Mixin节点是一门长期靠谱的项目">
+<meta property="og:url" content="http://nubyist.io/2019/11/14/xin-pos-mining-is-greate/index.html">
+<meta property="og:site_name" content="牛币主义者">
+<meta property="og:description" content="缘起昨天问起同事，我前天写的文章牛不牛？本来以为会收到溢美之词，结果他直接来了一句TLDR（太长没有看完）。错愕之余，摒掉“明珠暗投”之感后，我认真反省自己：对啊，好好的一件事，为什么要用这么繁复的表达？细思极恐：看来还是吃了财商教育不足的亏，从小学到的都是“肉食者鄙”、“小人喻于利”之类的观点，结果自己发现了一个感觉还不错的靠谱项目，想拉人入伙、找人投资却抹不开脸面直接谈钱，居然玩煽情。这年头，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-14T09:03:21.000Z">
+<meta property="article:modified_time" content="2023-02-23T15:43:57.245Z">
+<meta property="article:author" content="Sean Lee">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://nubyist.io/2019/11/14/xin-pos-mining-is-greate/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://nubyist.io/2019/11/14/xin-pos-mining-is-greate/","path":"2019/11/14/xin-pos-mining-is-greate/","title":"为什么说Mixin节点是一门长期靠谱的项目"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>为什么说Mixin节点是一门长期靠谱的项目 | 牛币主义者</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">牛币主义者</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">牛逼者必留牛币</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%98%E8%B5%B7"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%A2%AF%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">电梯测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%98%AF"><span class="nav-number">3.</span> <span class="nav-text">但是</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E8%BD%AC%E6%8A%98"><span class="nav-number">4.</span> <span class="nav-text">神转折</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E9%99%A9"><span class="nav-number">6.</span> <span class="nav-text">风险</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sean Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nubyist.io/2019/11/14/xin-pos-mining-is-greate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sean Lee">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="为什么说Mixin节点是一门长期靠谱的项目 | 牛币主义者">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          为什么说Mixin节点是一门长期靠谱的项目
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-14 17:03:21" itemprop="dateCreated datePublished" datetime="2019-11-14T17:03:21+08:00">2019-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-23 23:43:57" itemprop="dateModified" datetime="2023-02-23T23:43:57+08:00">2023-02-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>昨天问起同事，我前天写的文章牛不牛？本来以为会收到溢美之词，结果他直接来了一句TLDR（太长没有看完）。错愕之余，摒掉“明珠暗投”之感后，我认真反省自己：对啊，好好的一件事，为什么要用这么繁复的表达？细思极恐：看来还是吃了<strong>财商教育</strong>不足的亏，从小学到的都是“肉食者鄙”、“小人喻于利”之类的观点，结果自己发现了一个感觉还不错的靠谱项目，想拉人入伙、找人投资却抹不开脸面直接谈钱，居然玩煽情。这年头，读你一篇长文是给你面子，你还这么绕，太浪费大家的时间了。对嘛，我又不骗人，为什么要不好意思谈钱嘛。</p>
+<p>好吧，这一次我坦坦荡荡、堂堂正正的来谈谈“赚钱”的事。</p>
+<h2 id="电梯测试"><a href="#电梯测试" class="headerlink" title="电梯测试"></a>电梯测试</h2><p>我试着简单点，看能不能尽量在30秒内引起大家的兴趣，也就是传说中勾引VC风投的“电梯测试”。</p>
+<p>如果只让我说一句：<br>我有一个基于区块链的去中心化支付平台公司的早期入股机会，投入大概要两千万，回报率大概有20倍（风投基金的锁定期常规就是5+2年）。</p>
+<p>如果这时你没有打断，我会补上两句：</p>
+<ul>
+<li>其实简单点说，我发现了一个百倍币，当然保守估计也有10至15倍增长空间</li>
+<li>而且如果有一万个币，就可以抵押币成为记账节点，七年能有73%左右的额外的币的收益<br>两者相乘保守也能有20倍收益</li>
+</ul>
+<p>如果依然还有兴趣的话，我会这样解释：</p>
+<ul>
+<li>为什么说是百倍币呢？因为它完美地解决了一个真正的痛点：对于数字货币钱包来说，<strong>安全与方便</strong>很难兼顾，但现在能做到，仅靠一个手机号码再加6位数字的PIN码，简单安全的存储几乎所有数字货币。</li>
+<li>此外，你只需要知道对方的手机号码，就能准确无误地给对方<strong>实时</strong>转账任何数字货币</li>
+<li>并且，从技术设计上，几乎不会发生丢币或者跑路的情况</li>
+</ul>
+<p>如果还没有能说服你，我会这样展开：</p>
+<ul>
+<li>此外因为钱包背后本身就是一个数字货币储值平台，天然能提供转账与支付功能，由此可以很正常的扩展出交易所、借贷之类的金融生态</li>
+<li>并且钱包本身也是一个聊天软件，除了社交之外更能天然的扩展出知识付费，邀请返现之类电商玩法</li>
+<li>更牛的是，以上所有功能并不是停留在白皮书阶段，而是已经做出来了开箱即用，并且任何人都可以像为微信、支付宝开发小程序一样，在上面扩展自己的功能，有很大的商业想象空间</li>
+</ul>
+<p>而且，我还能从估值上定位：</p>
+<ul>
+<li>现在这个项目估值不过2.5亿美金，流通市值不到1.3亿，与支付宝和微信千亿级美金的估值相差太远，我们就不用去幻想这些了</li>
+<li>如果与仅仅做数字货币支付业务Circle公司80亿美金的估值对标，也是严重低估的</li>
+</ul>
+<p>横向比较：</p>
+<ul>
+<li>竞品都不太好，闪电网络技术门槛高，Cosmos还基本没有人用，Polkadot还没有发布正式版</li>
+<li>此外竞品使用的BlockChain技术，而这个项目使用的是DAG，BlockChain需要等待上一个区块生成才能生成下一个区块，而DAG像一个网，可以在任何点上向外扩展，不用等待上一个区块生成，更适合支付这种对实时要求性高的项目</li>
+</ul>
+<p>生态位：</p>
+<ul>
+<li>头部产品会引起更多用户聚集的马太效应</li>
+<li>飞轮效应：虽然现在Mixin的用户还不太多，但是正在有更多的推广将用户吸引过来</li>
+</ul>
+<p>blabla、、、</p>
+<h2 id="但是"><a href="#但是" class="headerlink" title="但是"></a>但是</h2><p>然而VC是不会将我请进他们的办公室详谈、签合同与开支票的。因为还有一个问题的答案必定让他们勃然大怒:</p>
+<ul>
+<li>请问，你需要多少钱，准备怎么开展这个项目？</li>
+</ul>
+<p>“呃，我只要两千万RMB，人并不需要其他人，我一个人、、、、”</p>
+<p><strong>“滚！”</strong></p>
+<p>诚如你所料，其实上面只是一个玩笑，我又没忍住开始插科打浑了。因为这本来就不是一个找风投的项目，只是借用了风投的“电梯测试”来展开场景。毕竟我现在在做的事，其实与风投基金比较象，也是找钱，投在项目里，然后等时间给出结果。</p>
+<p>不过更应该说，这个更像是一次私募，只是不像一般的股票基金型的私募，因为POS机制的存在，有点象是去买股票，卖方说如果你<strong>买一万股并承诺七年锁仓</strong>的话，按六折（1&#x2F;1.7~&#x3D;0.6）卖你。</p>
+<h2 id="神转折"><a href="#神转折" class="headerlink" title="神转折"></a>神转折</h2><p>私募经理募资时只会向你展示战绩与选股理念，但不会告诉你投资标的与配比。我虽然有投资业绩但不能拿来一说，因为在区块链的世界里，那有点小儿科了:(</p>
+<p>不过我直接告诉你，我为什么这么选也是有坦白的动机的：</p>
+<ul>
+<li>我还准备在区块链的投资世界里活很久，所以一开始亮明观点与看法，如果万一成了这将是一个历史性的背书，也将是一次信用的积累</li>
+<li>而且如果你真的认同了我的理念但没有投我，而是自己去买了XIN，甚至自己去挖XIN，对我也没有什么坏处，因为我现在本身也是XIN的长期持有者，自然也能从中受益</li>
+<li>除了能运营XIN节点外，我对资方的价值主要是能帮你锁住钱，不会让你因为暴涨而卖了，失去了本来应该获得的巨额利润，是那个财富的看门人</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这是上一篇文章思路的简化版，所有有很多前提是没有论证并直接认为是成立的：</p>
+<ul>
+<li>BTC不会死，而会越来越好</li>
+<li>BTC和其它数字货币的支付业务是一个必然刚需<br>所有请<strong>谨慎</strong>判断</li>
+</ul>
+<h2 id="风险"><a href="#风险" class="headerlink" title="风险"></a>风险</h2><p>还是需要再郑重警示一下：<strong>区块链投资现在依然存在高风险，请使用闲钱投资。此外你最好是一个合格的投资人。</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/11/03/let-me-brag-about-mixin-mining/" rel="prev" title="我吹牛其实蛮靠谱的，说不定它真的实现了呢">
+                  <i class="fa fa-chevron-left"></i> 我吹牛其实蛮靠谱的，说不定它真的实现了呢
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/11/29/xin-pos-mining-is-greate-again/" rel="next" title="再说说Mixin节点的事">
+                  再说说Mixin节点的事 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Lee</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
